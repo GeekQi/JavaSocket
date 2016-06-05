@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -26,6 +27,11 @@ public class ClientWithResponse {
 			pw.write("//有响应//用户名：admin; 密码：123");// 要进行登录，需要向服务器端发送用户名和密码的信息
 			pw.flush();// 刷新缓存，向服务器端输出信息
 			// 输出之后，关闭socket的输出流
+			
+//			ObjectOutputStream oos = new ObjectOutputStream(os);
+//			User user = new User("admin", "123");
+//			oos.writeObject(user);;
+			
 			socket.shutdownOutput();
 			// 客户端需要接受信息，需要输入流。
 			// 2.5 获取输入流， 并读取服务端的响应信息

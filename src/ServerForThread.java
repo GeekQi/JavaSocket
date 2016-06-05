@@ -21,6 +21,7 @@ public class ServerForThread {
 				// 一旦某一个客户端连接以后，服务器会创建一个与之对应的socket，需要启动一个线程，通过当前线程来与客户端通信
 				// 创建一个新的线程
 				ServerThread serverThread = new ServerThread(socket);
+				serverThread.setPriority(4);//设置线程的优先级，范围为［1， 10］， 默认为5
 				// 启动线程，执行与客户端的通信
 				serverThread.start();
 				count++;//统计客户端的数量
