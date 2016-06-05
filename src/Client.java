@@ -20,7 +20,7 @@ public class Client {
 			OutputStream os = socket.getOutputStream();// 获取字节输出流//对它进行包装
 			PrintWriter pw = new PrintWriter(os);// 将输出流包装为打印流
 			// 有了这个输出流以后，可以向服务器端发送信息
-			pw.write("用户名：admin; 密码：123");// 要进行登录，需要向服务器端发送用户名和密码的信息
+			pw.write("用户名：tom; 密码：123");// 要进行登录，需要向服务器端发送用户名和密码的信息
 			pw.flush();// 刷新缓存，向服务器端输出信息
 			// 输出之后，关闭socket的输出流
 			socket.shutdownOutput();
